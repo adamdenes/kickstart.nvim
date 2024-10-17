@@ -359,6 +359,23 @@ require('lazy').setup({
       },
       { 'nvim-telescope/telescope-ui-select.nvim' },
 
+      {
+        'christoomey/vim-tmux-navigator',
+        cmd = {
+          'TmuxNavigateLeft',
+          'TmuxNavigateDown',
+          'TmuxNavigateUp',
+          'TmuxNavigateRight',
+          -- 'TmuxNavigatePrevious',
+        },
+        keys = {
+          { '<C-h>', '<cmd><C-U>TmuxNavigateLeft<cr>' },
+          { '<C-j>', '<cmd><C-U>TmuxNavigateDown<cr>' },
+          { '<C-k>', '<cmd><C-U>TmuxNavigateUp<cr>' },
+          { '<C-l>', '<cmd><C-U>TmuxNavigateRight<cr>' },
+          -- { '<C-\\>', '<cmd><C-U>TmuxNavigatePrevious<cr>' },
+        },
+      },
       -- Useful for getting pretty icons, but requires a Nerd Font.
       { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
       {
@@ -720,7 +737,7 @@ require('lazy').setup({
       formatters_by_ft = {
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
-        python = { "black" },
+        python = { 'black' },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
@@ -855,7 +872,6 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-
       require('tokyonight').setup {
         transparent = true,
         styles = {

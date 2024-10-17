@@ -20,6 +20,7 @@ return {
     -- Installs the debug adapters for you
     'williamboman/mason.nvim',
     'jay-babu/mason-nvim-dap.nvim',
+    'mfussenegger/nvim-dap-python',
 
     -- Add your own debuggers here
     'leoluz/nvim-dap-go',
@@ -101,5 +102,7 @@ return {
         detached = vim.fn.has 'win32' == 0,
       },
     }
+    -- Install python specific config
+    require('dap-python').setup('python')
   end,
 }
